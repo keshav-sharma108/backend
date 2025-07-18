@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Submission</title>
+</head>
+<body>
+  <h1>Enter Name and Roll No</h1>
+  <form action="http://localhost:3000/api/submit" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required /><br /><br />
+
+    <label for="rollno">Roll No:</label>
+    <input type="number" name="rollno" id="rollno" required /><br /><br />
+
+    <button type="submit" onclick="submitData()">Submit</button>
+  </form>
+
+  <script>
+    function submitData() {
+      const name = document.getElementById('name').value;
+      const rollno = document.getElementById('rollno').value;
+
+      fetch('http://localhost:3000/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, rollno })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message || 'Submitted successfully!');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting data.');
+      });
+    }
+  </script>
+
+  
+</body>
+</html>

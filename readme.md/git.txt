@@ -1,0 +1,70 @@
+🧭 Key Git Branch Commands
+Command	What it does
+git branch	List branches
+git checkout -b branch-name	Create and switch to a new branch
+git switch branch-name	Switch to a branch
+git merge branch-name	Merge another branch into the current one
+git push -u origin branch-name	Push a new branch to GitHub
+
+🧱 BASIC SETUP
+Command	Description
+git config --global user.name "Your Name"	Set global username
+git config --global user.email "you@example.com"	Set global email
+git config --list	Show all Git configs
+git --version	Check Git version
+
+📁 REPOSITORY COMMANDS
+Command	Description
+git init	Initialize a new local Git repo
+git clone <url>	Clone a remote repo
+git remote -v	Show connected remotes (e.g., GitHub)
+
+📦 STAGING & COMMITTING
+Command	Description
+git status	Show current changes
+git add <file>	Stage a file
+git add .	Stage all changes
+git commit -m "message"	Commit staged changes
+git reset <file>	Unstage a file
+git rm <file>	Delete and stage file for commit
+
+🚀 PUSH & PULL
+Command	Description
+git push	Push commits to remote repo
+git pull	Pull latest changes from remote
+git push -u origin <branch>	Push branch for first time & set upstream
+
+🌿 BRANCHING
+Command	Description
+git branch	List branches
+git branch <name>	Create new branch
+git checkout <name>	Switch to a branch
+git checkout -b <name>	Create and switch to new branch
+git merge <name>	Merge another branch into current
+git branch -d <name>	Delete a branch
+git push origin --delete <branch>	Delete remote branch
+
+📜 LOGS & HISTORY
+Command	Description
+git log	Show commit history
+git log --oneline	Compact commit history
+git diff	Show unstaged changes
+git show <commit>	Show details of a specific commit
+
+🔧 REMOTE MANAGEMENT
+Command	Description
+git remote add origin <url>	Link local repo to GitHub
+git remote remove origin	Remove a remote
+git fetch	Fetch remote changes (without merging)
+
+
+✅ EXTRA: COMMON WORKFLOW (Quick Flow)
+bash
+Copy
+Edit
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <repo-url>
+git push -u origin main

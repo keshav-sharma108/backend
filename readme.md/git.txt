@@ -1,10 +1,3 @@
-🧭 Key Git Branch Commands
-Command	What it does
-git branch	List branches
-git checkout -b branch-name	Create and switch to a new branch
-git switch branch-name	Switch to a branch
-git merge branch-name	Merge another branch into the current one
-git push -u origin branch-name	Push a new branch to GitHub
 
 🧱 BASIC SETUP
 Command	Description

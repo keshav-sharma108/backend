@@ -3,15 +3,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// Middleware to parse form data
+
 app.use(express.urlencoded({ extended: true }));
 
-// MySQL connection
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "keshav@123",
-  database: "keshav_s",   // match your database
+  database: "keshav_s",  
   port: 3306
 });
 
@@ -23,9 +23,9 @@ connection.connect((err) => {
   console.log("✅ Connected to MySQL database presrnt'!");
 });
 
-// GET all users
+
 app.get('/api/users', (req, res) => {
-  const sql = 'SELECT * FROM ks';  // match your table name
+  const sql = 'SELECT * FROM ks'; 
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("❌ Query error:", err.message);
@@ -36,7 +36,7 @@ app.get('/api/users', (req, res) => {
   });
 });
 
-// POST to insert user
+
 app.post('/api/submit', (req, res) => {
   const { name, rollno } = req.body;
   if (!name || !rollno) {
@@ -57,3 +57,6 @@ app.post('/api/submit', (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
 });
+
+
+
